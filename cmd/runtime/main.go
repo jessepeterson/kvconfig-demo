@@ -16,11 +16,9 @@ import (
 )
 
 type MDMConfig struct {
-	Topic        string            `config:"config_topic"`
-	AccessRights int               `config:"config_access_rights"`
-	BaseURL      string            `config:"config_base_url"`
-	Foo          map[string]string `config:"config_foo"`
-	Bar          interface{}
+	Topic        string `config:"config_topic"`
+	AccessRights int    `config:"config_access_rights"`
+	BaseURL      string `config:"config_base_url"`
 	// MDMURL       string
 	// CheckinURL   string
 }
@@ -30,17 +28,10 @@ type PushCert struct {
 	*rsa.PrivateKey   `config:"push_pk"`
 }
 
-// func (c *PushCert) GetTopic() string {
-// 	return ""
-// }
-
 type RuntimeConfiguration struct {
 	MDMConfigs    []*MDMConfig
 	PushCerts     []*PushCert
 	PushCertTest1 *PushCert
-	// PushCertTest2 PushCert
-	// Logger         log.Logger
-	// Fub            []Fubar
 
 	ConfigHTTPPort   int    `config:"cfg_port"`
 	ConfigHTTPListen string `config:"cfg_listen"`
@@ -48,10 +39,6 @@ type RuntimeConfiguration struct {
 	ConfigHTTPPass   string `config:"cfg_pass"`
 
 	TestValue int `config:"testvalue"`
-}
-
-type Foo struct {
-	Bar *int
 }
 
 func main() {
